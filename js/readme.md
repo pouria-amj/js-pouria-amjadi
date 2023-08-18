@@ -1,0 +1,1 @@
+#first write user type to specify the type of user info then for crud write creat section then for update user use findindex and for input we right user id and user for new info then for delet e user use delete function and for input use id.

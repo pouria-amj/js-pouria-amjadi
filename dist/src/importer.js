@@ -1,0 +1,9 @@
+export const contactNameInput = document.querySelector("#contactName");
+export const PhonNumberInput = document.querySelector("#PhonNumber");
+export const deviceStorageInput = document.querySelector("#DeviceStorage");
+export const submitButton = document.querySelector("#submitButton");
+export const showContactsButton = document.querySelector("#showContactsButton");
+export const ContactsListDrawer = document.querySelector("#ContactsListDrawer");
+export const closeDrawerButton = document.querySelector("#closeDrawerButton");
+export const contactsListElement = document.querySelector("#contactsList");
+//# sourceMappingURL=importer.js.map

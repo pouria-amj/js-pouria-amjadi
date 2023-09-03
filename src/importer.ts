@@ -1,0 +1,8 @@
+export const contactNameInput= document.querySelector<HTMLInputElement>("#contactName")
+export const PhonNumberInput= document.querySelector<HTMLInputElement>("#PhonNumber")
+export const deviceStorageInput= document.querySelector<HTMLInputElement>("#DeviceStorage")
+export const submitButton = document.querySelector<HTMLButtonElement>("#submitButton")
+export const showContactsButton = document.querySelector<HTMLButtonElement>("#showContactsButton")
+export const ContactsListDrawer = document.querySelector<HTMLButtonElement>("#ContactsListDrawer")
+export const closeDrawerButton = document.querySelector<HTMLButtonElement>("#closeDrawerButton")
+export const contactsListElement = document.querySelector<HTMLUListElement>("#contactsList")

@@ -1,12 +1,23 @@
 import { ContactsListDrawer, contactNameInput, PhonNumberInput, deviceStorageInput, contactsListElement, } from './importer.js';
 import { contactList } from './state.js';
+import { creatListItem, validateFields } from './functions.js';
 export const showContactsButtonHandler = () => {
     ContactsListDrawer?.classList.remove("hidden");
 };
 export const closeContactsHandler = () => {
     ContactsListDrawer?.classList.add("hidden");
 };
+const validateCreatContact = (contactInfo) => {
+    if (!validateFields(contactInfo.contactName, contactInfo.phoneNumber + "")) {
+        alert("fill all fields");
+        throw Error("fill all fields");
+    }
+};
 export const handelCreateContact = () => {
+    validateCreatContact({
+        contactName: contactNameInput.value,
+        phoneNumber: PhonNumberInput.value
+    });
     const newContact = {
         id: crypto.randomUUID(),
         contactName: contactNameInput?.value ?? "",
@@ -15,14 +26,10 @@ export const handelCreateContact = () => {
         storage: deviceStorageInput?.checked ? "Device" : "SIM",
     };
     contactList.push(newContact);
-    const listItem = document.createElement("li");
-    listItem.className = "py-4 px-1 bg-slate-400 rounded-lg";
-    const contactNameElemnt = document.createElement("h2");
-    contactNameElemnt.innerText = newContact.contactName;
-    const contactPhoneElemnt = document.createElement("p");
-    contactPhoneElemnt.innerText = newContact.phoneNumber.toString();
-    listItem.appendChild(contactNameElemnt);
-    listItem.appendChild(contactPhoneElemnt);
+    const listItem = creatListItem({
+        contactName: newContact.contactName,
+        phoneNumber: newContact.phoneNumber
+    });
     contactsListElement?.appendChild(listItem);
 };
 //# sourceMappingURL=events.js.map
